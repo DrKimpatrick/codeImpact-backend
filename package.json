@@ -2,10 +2,19 @@
     "name": "codeimpact-backend",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "NODE_ENV=development nodemon --watch './lib/**/*.ts' --ignore './lib/**/*.spec.ts' --exec 'ts-node' ./lib/server.ts"
+        "dev": "NODE_ENV=development nodemon --watch './lib/**/*.ts' --ignore './lib/**/*.spec.ts' --exec 'ts-node' ./lib/server.ts",
+        "postinstall": "npm run build-ts",
+        "build-ts": "tsc",
+        "watch-node": "nodemon ./src/dist/server.js",
+        "watch-ts": "tsc -w",
+        "serve": "node ./src/dist/server.js",
+        "start": "NODE_ENV=development nodemon ./src/dist/server.js",
+        "lint": "node_modules/.bin/eslint --fix  src/lib/**/*.ts",
+        "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+        "heroku-postbuild": "echo This runs afterwards."
     },
     "author": "drkimpatrick",
     "license": "ISC",
@@ -26,5 +35,8 @@
     "devDependencies": {
         "nodemon": "^1.19.4",
         "ts-node": "^8.4.1"
+    },
+    "engines": {
+        "node": "11.12.0"
     }
 }
