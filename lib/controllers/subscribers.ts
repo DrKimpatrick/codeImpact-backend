@@ -15,7 +15,7 @@ class Subscribers {
 
             return res.json({
                 status: 1,
-                message: "Successfully subscribed to the codeIpact newsletter"
+                message: "Successfully subscribed to the codeImpact newsletter"
             });
         });
     }
