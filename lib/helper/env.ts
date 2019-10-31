@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const { MONGODB_DATABASE } = process.env;
+const { MONGODB_DATABASE, PORT  } = process.env;
 
 // default mongoDB connection string
 const mongodbUrl = 'mongodb://localhost/banka1';
@@ -9,5 +9,6 @@ const mongodbUrl = 'mongodb://localhost/banka1';
 const atlas = "mongodb+srv://codeimpactug:Kp15712Kp@codeimpact-ar8ut.mongodb.net/test?retryWrites=true&w=majority"
 
 export default { 
-    MONGODB_DATABASE: MONGODB_DATABASE || mongodbUrl
+    MONGODB_DATABASE: MONGODB_DATABASE || mongodbUrl,
+    PORT: PORT || 8000
  }
