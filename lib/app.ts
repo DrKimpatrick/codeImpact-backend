@@ -2,12 +2,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import env from './helper/env';
 import Routers from './routes';
-
+import cors from 'cors';
 class App {
     public app: express.Application = express();
     private mongoUrl = env.MONGODB_DATABASE;
 
     public constructor(){
+        this.app.use(cors());
         this.config();
         this.mongoSetup();
         this.configureRoutes();
