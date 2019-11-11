@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import SubscriberController from '../controllers/subscribers';
+import RegisterControoler from '../controllers/register';
 
 const router = express.Router();
 /**
@@ -19,5 +20,7 @@ router.route('/').get((req: Request, res: Response) => {
     }
  */
 router.route('/subscribe').post(SubscriberController.saveSubscriber);
+
+router.route('/register').post(RegisterControoler.registerUser);
 
 export default router;
