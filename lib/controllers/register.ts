@@ -7,6 +7,7 @@ class Register {
 
         newObj.save((err: any) => {
             if (err) {
+                console.log(err, '----error--');
                 return res.json({
                     status: -1,
                     error: "Something wrong happened duing the request"

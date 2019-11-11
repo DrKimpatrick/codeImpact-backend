@@ -21,7 +21,7 @@ class App {
 
     private mongoSetup(): void {
         try {
-            mongoose.connect(this.mongoUrl, { useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false });
+            mongoose.connect(this.mongoUrl, { useUnifiedTopology: true ,useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false });
         } catch {
             console.log('Please provide a mongodb url fit for this environment');
         }
